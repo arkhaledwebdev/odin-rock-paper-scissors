@@ -80,55 +80,43 @@ function getComputerChoice() {
     switch (randomChoice) {
         case 0:
             return "rock";
-            break;
         case 1:
             return "paper";
-            break;
         case 2:
             return "scissors";
-            break;
     }
 }
 
 function playRound(playerSelection, computerSelection) {
 
-    if (playerSelection.toLowerCase() === "rock") {
+    if (playerSelection === "rock") {
         switch (computerSelection) {
             case "rock":
                 return 'draw';
-                break;
             case "paper":
                 return 'lose';
-                break;
             case "scissors":
                 return 'win';
-                break;
         }
     }
-    else if (playerSelection.toLowerCase() === "paper") {
+    else if (playerSelection === "paper") {
         switch (computerSelection) {
             case "rock":
                 return 'win';
-                break;
             case "paper":
                 return 'draw';
-                break;
             case "scissors":
                 return 'lose';
-                break;
         }
     }
-    else if (playerSelection.toLowerCase() === "scissors") {
+    else if (playerSelection === "scissors") {
         switch (computerSelection) {
             case "rock":
                 return 'lose';
-                break;
             case "paper":
                 return 'win';
-                break;
             case "scissors":
                 return 'draw';
-                break;
         }
     }
     else {
@@ -139,8 +127,8 @@ function playRound(playerSelection, computerSelection) {
 
 
 function clearBorders() {
-    imageP1.style.border = '5px solid white';
-    imageP2.style.border = '5px solid white';
+    imageP1.style.border = '5px solid lightYellow';
+    imageP2.style.border = '5px solid lightYellow';
 }
 
 function checkResult(result) {
@@ -171,8 +159,6 @@ function checkResult(result) {
         else if (result === 'draw') {
             imageP1.style.border = '5px solid mediumseagreen';
             imageP2.style.border = '5px solid mediumseagreen';
-            playerScore++;
-            computerScore++;
             console.log(`playerScore: ${playerScore}`)
             console.log(`computerScore: ${computerScore}`)
             playerScoreValue.textContent = playerScore;
@@ -183,8 +169,8 @@ function checkResult(result) {
             }
         }
         else {
-            imageP1.style.border = '5px solid white';
-            imageP2.style.border = '5px solid white';
+            imageP1.style.border = '5px solid lightYellow';
+            imageP2.style.border = '5px solid lightYellow';
         }
     }
 
@@ -228,8 +214,8 @@ function resetGame() {
     isGameStarted = false;
     disableButtons();
     resetScore();
-    imageP1.style.border = '5px solid white';
-    imageP2.style.border = '5px solid white';
+    imageP1.style.border = '5px solid lightYellow';
+    imageP2.style.border = '5px solid lightYellow';
     playButton.textContent = 'PLAY';
     playButton.style.backgroundColor = 'mediumseagreen';
     playButton.style.color = 'white';
@@ -254,8 +240,6 @@ function gameEnd(result) {
         resetGame();
     }
     else if (result === 'draw') {
-        playerGamesWon++;
-        computerGamesWon++;
         playerGamesWonText.textContent = playerGamesWon;
         computerGamesWonText.textContent = computerGamesWon;
         console.log('draw')
