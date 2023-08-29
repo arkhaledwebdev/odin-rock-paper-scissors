@@ -1,11 +1,63 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="UTF-8">
   <title>Page Title</title>
-    <script src="script.js"></script>
+  <link rel="stylesheet" href="styles.css">
+  <script src="scripts.js" defer></script>
 </head>
+
 <body>
-  <h1>Rock-Paper-Scissors</h1>
+  <div class="header">
+    <h1>Rock-Paper-Scissors Game</h1>
+  </div>
+
+  <div class="score-container">
+    <div class="score-box p1">
+      <div class="score">PLAYER</div>
+      <div class="score" id="p1-score-value">0</div>
+    </div>
+    <div class="divider"></div>
+    <div class="score-box p2">
+      <div class="score" id="p2-score-value">0</div>
+      <div class="score">COMPUTER</div>
+    </div>
+
+  </div>
+
+  <div class="images-container">
+    <img class="image p1" src="./images/default.png">
+    <div class="vertical-line"></div>
+    <img class="image p2" src="./images/default.png">
+    
+  </div>
+
+  <div class="button-container">
+    <button class="button main">PLAY</button>
+  </div>
+
+  
+  <div class="button-container">
+    <button class="button secondary" id="rock">ROCK</button>
+    <button class="button secondary" id="paper">PAPER</button>
+    <button class="button secondary" id="scissors">SCISSORS</button>
+  </div>
+
+  <div class="score-history-container">
+
+    <div class="score-history p1">
+      <div>Number of games player won:</div>
+      <div class="score-history-value" id="score-history-value-p1">0</div>
+    </div>
+
+    <div class="score-history p2">
+      <div>Number of games computer won:</div>
+      <div class="score-history-value" id="score-history-value-p2">0</div>
+    </div>
+
+  </div>
+
 </body>
+
 </html>
